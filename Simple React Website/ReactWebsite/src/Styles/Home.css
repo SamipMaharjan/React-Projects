@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Mukta:wght@400;600&family=Poppins:wght@500&display=swap');
+/* font-family: 'Kanit', sans-serif;
+font-family: 'Mukta', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+
+.header-container{
+    height: 220px;
+    display: flex; 
+    flex-direction: column;
+    font-family: 'Mukta', sans-serif;
+
+}
+.header-container h1{
+    color: black; 
+    padding-top: 50px;
+    font-size: 3.2rem;
+}
+
+.header-container p{
+    padding-top: 3px;
+}
+
+.header-container .order-link{
+    padding-top: 10px;
+}
+
+.header-container .order-link button{
+    background-color: black;  
+    color: white;   
+}
+.home{
+    height: 500px; 
+}
+
+
+
+
+

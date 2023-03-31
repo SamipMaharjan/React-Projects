@@ -1,0 +1,10 @@
+.dropdown{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5d657;
+}
+.link-style{
+    text-decoration: none;
+    color: black;
+}

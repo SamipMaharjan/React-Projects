@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Mukta:wght@400;600&family=Poppins:wght@500&display=swap');
+/* font-family: 'Kanit', sans-serif;
+font-family: 'Mukta', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+:root{
+    --primary-state: "flex";
+    --secondary-state: "none";
+}
+*{
+    margin: 0; 
+}
+
+.nav-bar{
+    display: flex; 
+    justify-content: space-between;
+    background-color: #f1c40f;
+    height: 70px;
+}
+
+.left-side figure img{
+    display: flex;
+    height: 60px;
+    width: 80px;
+    margin-left: 60px;
+}
+
+.right-side a{
+    text-decoration: none;
+    color: black; 
+    font-size: 1.3rem;  
+    font-family: 'Mukta', sans-serif;
+}
+
+.right-side{
+    display: flex; 
+    align-items: center;
+    width: 300px;
+    justify-content: space-evenly;
+    padding-right: 20px;
+}
+
+#reorder{
+    display: none; 
+    border: none;
+}
+#reorder:hover{
+    background-color: #27ae60;
+    transition: 0.3s;
+}
+
+@media ( max-width: 600px ){
+
+    #reorder{
+    display: flex; 
+    background-color: #f1c40f;
+    border-color: #f1c40f;
+    }
+
+    .right-side{
+        display: flex; 
+        justify-content: flex-end;
+        padding-right: 20px;
+    }
+
+    .links{
+        display: none; 
+    }
+
+    .left-side figure img{
+        margin-left: 10%;
+    }
+
+}
