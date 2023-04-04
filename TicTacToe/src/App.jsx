@@ -29,8 +29,6 @@ function App() {
     else{
       alert("The square is already taken ")
     }
-
-    
   }
 
   const checkForWin = ( noughtOrCross ) => {
@@ -49,7 +47,46 @@ function App() {
         alert(`${noughtOrCross} has won the game.`);
       }, 300);
     }
+    else
+    {
+      checkForDraw();
+    }
   } 
+
+  const checkForDraw = () => {
+    let count = 0; 
+    for ( let i = 0; i <= 2; i++ )
+    {
+      for ( let j = 0; j <= 2; j++ )
+      {
+        if ( board[i][j] != "" )
+        {
+          count++;
+        }
+      }
+    }
+    if ( count == 9 )
+    {
+      setTimeout( () => {
+        alert("Game is drawed.")
+      }, 100);
+    }
+  }
+
+  const restartGame = () => {
+    const emptyBoard = [
+      [ "", "", "" ], 
+      [ "", "", "" ],
+      [ "", "", "" ]
+    ]
+    for ( let i = 0; i <= 2; i++ )
+    {
+      for ( let j = 0; j <= 2; j++ )
+      {
+        setBoard( emptyBoard ); 
+      }
+    }
+  }
 
   return (
     <div className="App">
@@ -76,7 +113,14 @@ function App() {
         </div>
         {/* Row 3 */}
 
+
       </div>
+      {/* board*/}
+
+      <div className="button">
+        <button onClick={restartGame}>Restart</button>
+      </div>
+      {/* Restart button */}
     </div>
   )
 }
