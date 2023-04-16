@@ -2,3 +2,7 @@ Chess Game
 Social Media website 
 crypto app 
 chat app 
+
+Friendship app 
+personality test 
+etc
