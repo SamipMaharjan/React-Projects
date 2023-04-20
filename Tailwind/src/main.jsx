@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <React.StrictMode> 
     <h1 className='font-bold'> Trying out tailwind </h1>
   </React.StrictMode>,
 )
