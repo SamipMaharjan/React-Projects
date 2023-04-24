@@ -53,15 +53,16 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
 
             //Inserting the fetched values to their respective classes in HTML
-            document.querySelector(".weather-type").innerHTML = weatherDescription.toUpperCase();
-            document.querySelector(".city-name").innerHTML = cityName;
-            document.querySelector(".temperature span").innerHTML = parseInt(temperature);
-            document.querySelector(".feels-like span").innerHTML = parseInt(feels_like);
-            document.querySelector(".pressure span").innerHTML = parseInt(pressure);
-            document.querySelector(".humidity span").innerHTML = parseInt(humidity);
-            document.querySelector(".wind span").innerHTML = parseInt(windSpeed);
+            // document.querySelector(".weather-type").innerHTML = weatherDescription.toUpperCase();
+            // document.querySelector(".city-name").innerHTML = cityName;
+            // document.querySelector(".temperature span").innerHTML = parseInt(temperature);
+            // document.querySelector(".feels-like span").innerHTML = parseInt(feels_like);
+            // document.querySelector(".pressure span").innerHTML = parseInt(pressure);
+            // document.querySelector(".humidity span").innerHTML = parseInt(humidity);
+            // document.querySelector(".wind span").innerHTML = parseInt(windSpeed);
             const application = document.querySelector(".App"); 
             
+
             if ( weatherState == "Clouds" ) //
             {
                 document.querySelector("#weather-icon").className = "fa-solid fa-cloud";
@@ -125,8 +126,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 console.log('latitude: '+ weatherData['coord']['lat']);
                 console.log('longitude '+ weatherData['coord']['lon']);
                 console.log("state "+weatherState);
-            })();
-            
+            })();   
         })
         .catch(err => alert("Wrong name."))
     }

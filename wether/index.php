@@ -28,17 +28,6 @@
 
  echo "Employee Data Inserted";
 
-
-
-
-
-
-
-
-
-
-
-
 //  echo $array[0]['name'];      // output: Windsor
 //  echo $array[0]['lat'];       // output: 51.4800285
 //  echo $array[0]['lon'];       // output: -0.6125716

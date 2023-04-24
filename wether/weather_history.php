@@ -10,7 +10,11 @@
         echo "Connection error with thte database";
     }
 
-    $url = "https://api.weatherbit.io/v2.0/history/daily?postal_code=27601&city=windsor&start_date=2023-04-13&end_date=2023-4-20&key=f4c41c4cd95442098fed8f8a81174dcc";
+    $end_date = date("Y-m-d"); //Getting the current date
+    $start_date = date("Y-m-d", strtotime("-7 days")); // Get the date 7 days before the current date
+
+
+    $url = "https://api.weatherbit.io/v2.0/history/daily?postal_code=27601&city=windsor&start_date=".$start_date."&end_date=".$end_date."&key=f4c41c4cd95442098fed8f8a81174dcc";
 
     $weather_history = file_get_contents( $url );
 
@@ -33,6 +37,28 @@
 
         mysqli_query( $connection, $sql );
     }
-    // echo $date,"<br>";
-    // echo $city_name,"<br>";
+
+
+    $sql3 = "SELECT * FROM history;";
+    $result = mysqli_query( $connection, $sql3);
+
+    $stored_data = array();
+
+    while( $row = mysqli_fetch_assoc( $result ))
+    {
+        $stored_data[] = $row; 
+    }
+
+
+        foreach( $stored_data as $row )
+        {
+            echo $row["date"]."<br>";
+            echo $row["City_name"]."<br>";
+            echo $row["pressure"]."<br>";
+            echo $row["humidity"]."<br>";
+            echo $row["wind"]."<br>";
+            echo $row["max_temp"]."<br>";
+            echo $row["min_temp"]."<br>";
+            echo $row["precipitation"]."<br>";
+        }
 ?>

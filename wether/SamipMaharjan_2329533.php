@@ -77,13 +77,15 @@
 
                 <div class="temperature">
                     <h3><span>
-                        <?php echo $required_data["weather_description"] ?>
+                        <?php echo $required_data["temperature"] ?>
                     </span>°C</h3>
                 </div>
                 <!-- temperature  -->
 
                 <div class="feels-like">
-                    <p>Feels like <span>22</span>°C </p>
+                    <p>Feels like <span>
+                    <?php echo $required_data["feels_like"] ?>
+                    </span>°C </p>
                 </div>
                 <!-- feels like section  -->
             
@@ -94,17 +96,23 @@
 
         <div class="footer-section">
             <div class="pressure props">
-                <p>Pressure: <span></span> hPA</p>
+                <p>Pressure: <span>
+                <?php echo $required_data["pressure"] ?>
+                </span> hPA</p>
             </div>
             <!-- Pressure  -->
 
             <div class="humidity props">
-                <p>Humidity: <span></span>%</p>
+                <p>Humidity: <span>
+                <?php echo $required_data["humidity"] ?>
+                </span>%</p>
             </div>
             <!-- humidity  -->
 
             <div class="wind props">
-                <p>Wind: <span>10</span>km/h</p>
+                <p>Wind: <span>
+                <?php echo $required_data["windSpeed"] ?>
+                </span>km/h</p>
             </div>
             <!-- wind  -->
         </div>
