@@ -1,0 +1,44 @@
+.history{
+    color: white; 
+}
+.App{
+    background-color: rgba(32, 33, 35);
+    height: 560px; 
+    width: 340px;
+    margin: 15px auto;
+    color: white;
+    border-radius: 14px;
+    background-blend-mode: multiply;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.history{
+    display: flex; 
+    flex-direction: column;
+    padding: 0px 10px 0px 10px; 
+    /* justify-content: space-evenly; */
+
+}
+.date{
+    text-align: center;
+}
+.weather_details{
+    display: flex; 
+    justify-content: space-evenly;
+    width: 100%;    
+}
+.additional_details{
+    display: flex; 
+    flex-direction: column;
+    width: 80%;
+}
+.upper_section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.lower_section{
+    display: flex; 
+    justify-content: space-evenly;
+}
+

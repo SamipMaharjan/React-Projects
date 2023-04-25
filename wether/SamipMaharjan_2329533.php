@@ -40,17 +40,6 @@
         </div>
         <!-- top section -->
 
-        <!-- <div class="precipitation">
-            <div class="rain-icon">
-                <i class="fa-solid fa-droplet"></i>
-            </div>
-
-            <div class="rain-data">
-
-            </div>
-        </div> -->
-        <!-- precipitation  -->
-
         <div class="mid-section">
 
             <div class="icon">
