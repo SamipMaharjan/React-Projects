@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="SamipMaharjan_2329533.css">
+    <link rel="stylesheet" href="SamipMaharjan_2329533.css?v=<?php echo time(); ?>">
+    <!-- <link rel="stylesheet" href="weatherHistory.css?v=<?php echo time(); ?>"> -->
+
 
 </head>
 <body>
@@ -20,12 +22,21 @@
             </div>
             <!-- date -->
             
-            <div class="search-box">
-                <input class="search-txt" type="text" placeholder="Search for a city." name="city-name">
-                <a class ="search-btn" href="#">
-                     <i class="fas fa-search"></i>
-                </a>
-            </div>
+            <!-- <div class="search-box"> -->
+                    <form method="GET" action="server.php" class="search-box" id="search-form">
+                        <input class="search-txt" type="text" placeholder="Search for a city." name="search-button">
+                        <a class ="search-btn" href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </form>
+
+                    <!-- <script>
+                        document.getElementById('search-form').addEventListener('submit', function(event) {
+                            event.preventDefault(); // prevent form submission
+                        });
+                    </script> -->
+                
+            <!-- </div> -->
             <!-- Search bar -->
 
             <div class="nav-bar">
@@ -63,21 +74,30 @@
             <!-- city name  -->
             
             <div class="for-flex">
+                <div class="temperature-details">
+                    <div class="temperature">
+                        <h3><span>
+                            <?php echo $required_data["temperature"] ?>
+                        </span>°C</h3>
+                    </div>
+                    <!-- temperature  -->
 
-                <div class="temperature">
-                    <h3><span>
-                        <?php echo $required_data["temperature"] ?>
-                    </span>°C</h3>
+                    <div class="feels-like">
+                        <p>Feels like <span>
+                        <?php echo $required_data["feels_like"] ?>
+                        </span>°C </p>
+                    </div>
+                    <!-- feels like section  -->
                 </div>
-                <!-- temperature  -->
 
-                <div class="feels-like">
-                    <p>Feels like <span>
-                    <?php echo $required_data["feels_like"] ?>
-                    </span>°C </p>
+                <div class="history-button">
+                    <a href="#">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span> History</span>
+                    </a>
+
+                    
                 </div>
-                <!-- feels like section  -->
-            
             </div>
             <!-- For flex  -->
         </div>  
@@ -108,10 +128,84 @@
         <!-- footer section  -->
 
     </div>
-    <!-- App section  -->
+    <!-- App 1 section  -->
+
+    <div class="App2">
+        <div class = 'icon2'>
+            <a href="#">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            
+            <div class="history-text">
+                <span>Weather History</span>
+            </div>
+            
+        </div>
+
+        
+        <?php
+        //Using the for each loop to display the weather history
+            foreach( $stored_data as $row )
+                { 
+                    echo '<div class="history">'; 
+
+                        echo "<div class = 'date2'>"; 
+                            echo $row["date"]."<br>";
+                        echo "</div>";
+
+                        echo "<div class = 'weather_details'>";
+
+                            echo "<div class = 'day'>";
+
+                                $timestamp = strtotime( $row["date"] );
+                                $day_of_week = date('l', $timestamp);
+                                echo "<div>";
+                                    echo $day_of_week."<br>";
+                                echo "</div>";
+
+                            echo "</div>";
+
+                            echo "<div class = 'additional_details'>";
+
+                                echo "<div class = 'upper_section'>"; 
+
+                                    echo "<div class = 'max-temp'>"; 
+                                        echo "<span style = 'font-size: 0.8rem';>Avg-temp:</span> ";
+                                        echo "<span>".(($row["max_temp"]+$row["min_temp"])/2)."°C</span><br>";
+                                    echo "</div>"; 
+                                    
+                                    echo "<div class = 'precipitation'>"; 
+                                        echo "<span style = 'font-size: 0.8rem';>Precipitation: </span>".$row["precipitation"]." mm<br>";
+                                    echo "</div>"; 
+
+                                echo "</div>";
+
+                                echo "<div class = 'lower_section'>";
+
+                                    echo "<div class = 'humidity'>"; 
+                                        echo "<span style = 'font-size: 0.8rem';>Humidity: </span>".$row["humidity"]." %<br>";
+                                    echo "</div>"; 
+                                    
+                                    echo "<div class = 'wind'>"; 
+                                        echo "<span style = 'font-size: 0.8rem';>Wind: </span>";
+                                        echo "<span>".$row["wind"]." km/h</span><br>";
+                                    echo "</div>"; 
+
+                                echo "</div>    ";
+
+                            echo "</div>"; 
+
+                        echo "</div>";
+
+                    echo '</div>';
+                }
+        ?>
+            
+    </div>
+    <!-- App 2 section  -->
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://kit.fontawesome.com/65ed642159.js" crossorigin="anonymous"></script>
-    <script src="SamipMaharjan_2329533.js"></script>
+    <script src="SamipMaharjan_2329533.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

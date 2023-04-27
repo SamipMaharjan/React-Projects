@@ -2,21 +2,20 @@
 <html>
 <head>
 	<title>My PHP Page</title>
-    <link rel="stylesheet" href="weatherHistory.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
     <?php
-        $localhost = "localhost";
-        $username = "root";
-        $password = "";
-        $dbName = "php";
+        // $localhost = "localhost";
+        // $username = "root";
+        // $password = "";
+        // $dbName = "php";
 
-        $connection = mysqli_connect( $localhost, $username, $password, $dbName );
+        // $connection = mysqli_connect( $localhost, $username, $password, $dbName );
 
-        if( $connection  -> connect_error ){
-            echo "Connection error with the database";
-        }
+        // if( $connection  -> connect_error ){
+        //     echo "Connection error with the database";
+        // }
 
         function store_data_in_server( $connection ){
             $end_date = date("Y-m-d"); //Getting the current date
@@ -81,13 +80,16 @@
             }
         }
         
-        //displaying the dates
-        echo '<div class="App">';
+        //displaying the hisotry
+        echo '<div class="App2">';
+            echo "<div class = 'icon'>";
+                echo '<i class="fa-solid fa-arrow-left"></i>';
+            echo "</div>";
             foreach( $stored_data as $row )
             { 
                 echo '<div class="history">'; 
 
-                    echo "<div class = 'date'>"; 
+                    echo "<div class = 'date2[-0'>"; 
                         echo $row["date"]."<br>";
                     echo "</div>";
 
@@ -97,7 +99,9 @@
 
                             $timestamp = strtotime( $row["date"] );
                             $day_of_week = date('l', $timestamp);
-                            echo $day_of_week."<br>";
+                            echo "<div>";
+                                echo $day_of_week."<br>";
+                            echo "</div>";
 
                         echo "</div>";
 
@@ -106,31 +110,25 @@
                             echo "<div class = 'upper_section'>"; 
 
                                 echo "<div class = 'max-temp'>"; 
-                                    echo "max-temp: ".$row["max_temp"]."<br>";
-                                echo "</div>"; 
-
-                                echo "<div class = 'min-temp'>"; 
-                                    echo "min-temp: ".$row["min_temp"]."<br>";
+                                    echo "<span style = 'font-size: 0.8rem';>Avg-temp:</span> ";
+                                    echo "<span>".(($row["max_temp"]+$row["min_temp"])/2)."°C</span><br>";
                                 echo "</div>"; 
                                 
                                 echo "<div class = 'precipitation'>"; 
-                                    echo "precipitation: ".$row["precipitation"]."<br>";
+                                    echo "<span style = 'font-size: 0.8rem';>Precipitation: </span>".$row["precipitation"]." mm<br>";
                                 echo "</div>"; 
 
                             echo "</div>";
 
                             echo "<div class = 'lower_section'>";
-                            
-                                echo "<div class = 'pressure'>"; 
-                                    echo "pressure: ".$row["pressure"]."<br>";
-                                echo "</div>"; 
 
                                 echo "<div class = 'humidity'>"; 
-                                    echo "humidity: ".$row["humidity"]."<br>";
+                                    echo "<span style = 'font-size: 0.8rem';>Humidity: </span>".$row["humidity"]." %<br>";
                                 echo "</div>"; 
                                 
                                 echo "<div class = 'wind'>"; 
-                                    echo "wind: ".$row["wind"]."<br>";
+                                    echo "<span style = 'font-size: 0.8rem';>Wind: </span>";
+                                    echo "<span>".$row["wind"]." km/h</span><br>";
                                 echo "</div>"; 
 
                             echo "</div>    ";
@@ -140,10 +138,12 @@
                     echo "</div>";
 
                 echo '</div>';
-           
             }
         echo '</div>';
     ?>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/65ed642159.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
