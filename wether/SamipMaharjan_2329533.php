@@ -29,12 +29,6 @@
                             <i class="fas fa-search"></i>
                         </a>
                     </form>
-
-                    <!-- <script>
-                        document.getElementById('search-form').addEventListener('submit', function(event) {
-                            event.preventDefault(); // prevent form submission
-                        });
-                    </script> -->
                 
             <!-- </div> -->
             <!-- Search bar -->

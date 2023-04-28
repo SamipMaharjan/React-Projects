@@ -80,7 +80,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
             const application = document.querySelector(".App"); 
   
 
-            if ( weatherState == "Clouds" ) //
+     if ( weatherState == "Clouds" ) //
             {
                 document.querySelector("#weather-icon").className = "fa-solid fa-cloud";
 
@@ -129,6 +129,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 application.style.backgroundImage = "url('https://i.ibb.co/S6q9Xb2/Rain-background.png')";
 
             }
+
+           
 
 
             (function weatherDesc(){
