@@ -7,14 +7,14 @@ import Home from './Pages/Home/Home'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route index element = {<Home/>}/>
         </Routes>
-      </BrowserRouter> */}
-      <div className="font-bold">
+      </BrowserRouter>
+      {/* <div className="font-bold">
         Hello World atailwind.
-      </div>
+      </div> */}
     </>
   </React.StrictMode>,
 )
