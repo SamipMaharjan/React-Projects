@@ -1,0 +1,18 @@
+:root{
+    --purple-color: #8d27ae; 
+    --pink-color: #d9178d; 
+    --grey-color: #f3f3f3; 
+    --white-color: #fff; 
+    --black-color: #010101; 
+    --light-black-color: #717171; 
+    --transition: all 300ms ease-in-out; 
+}
+
+*{
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;  
+}
+html{
+     
+}
