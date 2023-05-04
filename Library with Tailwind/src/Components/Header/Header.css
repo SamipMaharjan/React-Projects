@@ -1,0 +1,10 @@
+.header-content{
+    min-height: 75vh; 
+    background-image: linear-gradient( rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)), url("../../Images/library-img.jpg") ;
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient( rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)) */
+    /* align-items: center; */
+
+}
