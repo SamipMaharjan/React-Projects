@@ -23,7 +23,8 @@ export default function NavBar() {
             <span className='text-uppercase fw-7 fs-24 ls-1'>BookHub</span>
             {/* App title */}
           </Link>
-          {/* Nested the title and logo in a Link, so when its clicked it navigates back to the home page */}
+          {/* Nested the title and logo in a Link,
+           so when its clicked it navigates back to the home page */}
 
           {/* Navigation bar Button with an icon from react-icons */}
           <button type= "button" className='navbar-toggle-btn' onClick={handleNavBar}>
