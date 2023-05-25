@@ -6,7 +6,6 @@ import { Typography, Button, AppBar,  Card, CardActions, CardContent, CardMedia,
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 
 import makeStyles from '@mui/material';
-
 //Creating a hook useStyles that stores function makeStyles. 
 const useStyles = makeStyles( ( theme ) => ({
 
