@@ -2,18 +2,23 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Typography, Button, AppBar,  Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from '@mui/material';
+import { Typography, Button, AppBar,  Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, Paper } from '@mui/material';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import { styled } from '@mui/system';
 
-import makeStyles from '@mui/material';
-//Creating a hook useStyles that stores function makeStyles. 
-const useStyles = makeStyles( ( theme ) => ({
-
-}))
+const StyledPaper = styled(Paper, {})({
+  color: "#ffffff",
+  backgroundColor: "silver", 
+  margin: "auto",
+  borderRaduis: 2, 
+  height: 300, 
+  width: 300, 
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+})
 
 function App() {
-  const classes = useStyles();
-
   const [count, setCount] = useState(0)
 
   return (
@@ -28,7 +33,7 @@ function App() {
        </AppBar>
 
         <main>
-          <div>
+          <div > 
             <Container maxWidth="sm">
 
               <Typography variant = "h2" align="center" color="textSecondary">
@@ -62,9 +67,11 @@ function App() {
               </div>
             </Container>
           </div>
-
-          
         </main>
+
+        <StyledPaper>
+          <Button variant="outlinex">Text</Button>
+        </StyledPaper>
     </>
   )
 }
