@@ -6,31 +6,67 @@ import {
   Toolbar,
   Button,
   IconButton,
+  Drawer
 } from "@mui/material";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [ mobileOpen, setMobileOpen ] = useState(false);
-  const drawer = {
-    
-  }
+
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
-      <Box>
-        <AppBar component={"nav"} sx={{ bgcolor: "black" }}>
+      <Box sx={{ paddingBottom: "64px"}}>
+        <AppBar component={"nav"} sx={{ bgcolor: "black", position: 'fixed'}}>
+
+          {/* Toolbar applies css so that building navbar is more convinient */}
           <Toolbar>
-            <IconButton>
-              <MenuIcon
-                sx={{
-                  color: "white",
-                  fontSize: 34,
-                  display: { xs: "block", sm: "none" },
-                }}
-              ></MenuIcon>
-            </IconButton>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="logo"
+            onClick={() => {
+              setDrawerOpen(true);
+            }}
+            sx={{ display: { xs: 'block', sm: 'none'}}}
+          >
+            <MenuIcon></MenuIcon>
+          </IconButton>
+
+          <Drawer
+            anchor="left"
+            open={drawerOpen}
+            onClose={() => setDrawerOpen(false)}
+            width={3}
+          >
+            <Box p={2} width="250px" textAlign="center" role="presentation">
+              <Typography variant="h6" component="div">
+                Side Panel
+              </Typography>
+
+              <Box sx={{display: 'flex', flexDirection: 'column'}}>
+              <Button variant="text" component={Link} to="/">
+                Home
+              </Button>
+
+              <Button variant="text" component={Link} to="/about">
+                About
+              </Button>
+
+              <Button variant="text" component={Link} to="/contact">
+                Contact
+              </Button>
+
+              <Button variant="text" component={Link} to="/Menu">
+                Menu
+              </Button>
+            </Box>
+            </Box>
+          </Drawer>
+
             <Typography
               color={"goldenrod"}
               component={"div"}
@@ -41,6 +77,7 @@ export default function Header() {
               My Restaurant
             </Typography>
 
+            {/* Hides the links in the navbar when screen is xs  */}
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               <Button variant="text" component={Link} to="/">
                 Home
@@ -59,27 +96,6 @@ export default function Header() {
               </Button>
             </Box>
 
-            {/* <Box>
-            <ul>
-
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-
-              <li>
-              <Link to='/about'>About</Link>
-              </li>
-              
-              <li>
-              <Link to='/contact'>Contact</Link>
-              </li>
-
-              <li>
-              <Link to='/menu'>Menu</Link>  
-              </li>
-
-            </ul>
-      </Box> */}
           </Toolbar>
         </AppBar>
       </Box>
