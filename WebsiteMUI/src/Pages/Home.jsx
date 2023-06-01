@@ -1,8 +1,7 @@
 import React from "react";
-import Layout from "../components/Layout/Layout";
 import { Link } from "react-router-dom";
 import Banner from "../Images/banner.jpeg";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import styled from "styled-components";
 
 export default function Home() {
@@ -29,7 +28,7 @@ export default function Home() {
   return (
   
     <>
-      <Layout>
+      
         <StylesForHome sx={{ backgroundImage: `url(${Banner})` }}>
           <StylesForDescription>
             {/* Styled heading using styled fucntion  */}
@@ -37,12 +36,12 @@ export default function Home() {
 
             <Typography>Best Food In Nepal</Typography>
 
-            <Link to="/menu">
-              <button>ORDER NOW</button>
-            </Link>
+            <Button variant="contained" color="success" component = {Link} to='/menu'>
+              ORDER NOW
+            </Button>
           </StylesForDescription>
         </StylesForHome>
-      </Layout>
+      
     </>
   );
 }
