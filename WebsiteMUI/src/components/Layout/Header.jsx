@@ -8,9 +8,9 @@ import {
   IconButton,
   Drawer,
 } from "@mui/material";
-import StorefrontIcon from "@mui/icons-material/Storefront";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import Logo from '../../Images/logo.svg';
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -48,7 +48,7 @@ export default function Header() {
 
                 {/* Group of Buttons  */}
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
-                  <Button variant="text" component={Link} to="/" >
+                  <Button variant="text" component={Link} to="/">
                     Home
                   </Button>
 
@@ -73,8 +73,7 @@ export default function Header() {
               variant="h6"
               sx={{ flexGrow: 1 }}
             >
-              <StorefrontIcon />
-              My Restaurant
+              <img src={Logo} alt="Logo" height={'70'} width='250px'></img>
             </Typography>
 
             {/* Hides the links in the navbar when screen is xs  */}
