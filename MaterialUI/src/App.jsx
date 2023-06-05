@@ -13,7 +13,6 @@ function App() {
   const RoundedButton = styled( myButton )({
     borderRadius: '23px'
   });
-
   
   return (
     <>
