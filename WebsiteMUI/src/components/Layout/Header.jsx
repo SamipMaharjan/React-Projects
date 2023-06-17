@@ -31,7 +31,7 @@ export default function Header() {
               }}
               sx={{ display: { xs: "block", sm: "none" } }}
             >
-              <MenuIcon></MenuIcon>
+              <MenuIcon />
             </IconButton>
 
             {/* Side bar for when the screen is xs */}
@@ -67,6 +67,7 @@ export default function Header() {
               </Box>
             </Drawer>
 
+            {/* Logo Icon  */}
             <Typography
               color={"goldenrod"}
               component={"div"}
